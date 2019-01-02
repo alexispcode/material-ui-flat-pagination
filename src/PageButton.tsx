@@ -116,9 +116,9 @@ export interface PageButtonProps extends StandardProps<ButtonProps, PageButtonCl
 const handleClick = (
   page: number,
   limit: number,
-  onClick: (ev: React.MouseEvent<HTMLElement>, offset: number) => void
+  onClick: (ev: React.MouseEvent<HTMLElement>, offset: number, page: number) => void
 ) => (ev: React.MouseEvent<HTMLElement>): void => {
-  onClick(ev, getOffset(page, limit));
+  onClick(ev, getOffset(page, limit), page);
 };
 
 const PageButton: React.SFC<PageButtonProps & WithStyles<PageButtonClassKey>> = props => {
